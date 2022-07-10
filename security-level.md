@@ -23,7 +23,7 @@ Thus, this definition takes the view that the security level definition possible
 This level does not indicate there is no protection at all, just that the entity doesn't qualify for the higher levels.
 
 2 - Restricted:
-: Entities at this level MUST meet was is described below in Restricted Characteristics
+: Entities at this level MUST meet was is described below in Restricted Characteristics.
 Security at this level is aimed at defending against large-scale network/remote attacks by having a reduced attack surface.
 
 3 - Hardware:
