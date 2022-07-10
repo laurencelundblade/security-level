@@ -41,10 +41,10 @@ See also the DLOAs claim in EAT {{dloas}}, a claim that specifically provides in
 
 ## Restricted Characteristics
 * The entity's security configuration must be controlled by the vendor of the commercial device or its delegates or its suppliers.
-* The entity must protect itself from modifications degrading its security. This includes modifications when powered-off. It hence requires a secure boot process of the AROE.
-* The entity must provide full isolation from any rich OS or external devices or operating environments it connects with except for conveyance of protocol messages intended for communication with the rich OS and external devices or operating environments. As a consequence, it must not be possible for SW or HW on the same device but outside the AROE to modify any state, registers, memory or storage inside the operating environment.
-The entity should be security-oriented with the bulk of the functionality it hosts and provides being focused primarily on security (e.g., not large graphics engines, signal processors, general purpose app hosting, network stacks and such).
-The apps hosted by the AROE should be primarily security-oriented (e.g., does not host thousands of downloadable games, complex productivity apps like word processors, or large scale network apps like web browsers).
+* The entity must protect itself from modifications degrading its security. This includes modifications when powered-off. It hence requires a secure boot process of the entity.
+* The entity must provide full isolation from any rich OS or external devices or operating environments it connects with except for conveyance of protocol messages intended for communication with the rich OS and external devices or operating environments. As a consequence, it must not be possible for SW or HW on the same device but outside the entity to modify any state, registers, memory or storage inside the operating environment.
+* The entity should be security-oriented with the bulk of the functionality it hosts and provides being focused primarily on security (e.g., not large graphics engines, signal processors, general purpose app hosting, network stacks and such).
+* The apps hosted by the entity should be primarily security-oriented (e.g., does not host thousands of downloadable games, complex productivity apps like word processors, or large scale network apps like web browsers).
 * A security oriented SW engineering practice should be followed
     * Code is reviewed by security experts
     * A security patch system is in place
@@ -55,16 +55,16 @@ The apps hosted by the AROE should be primarily security-oriented (e.g., does no
 
 ## CDDL
 
-$$Claims-Set-Claims //=
-    ( security-level-label => security-level-type ) 
+    $$Claims-Set-Claims //=
+        ( security-level-label => security-level-type ) 
+    
+    security-level-type = unrestricted /
+                          restricted /
+                          hardware
 
-security-level-type = unrestricted /
-                      restricted /
-                      hardware
-
-unrestricted       = JC< "unrestricted",      1>
-restricted         = JC< "restricted",        2>
-hardware           = JC< "hardware",          3>
+    unrestricted       = JC< "unrestricted",      1>
+    restricted         = JC< "restricted",        2>
+    hardware           = JC< "hardware",          3>
 
 
 ## Why Security-Level is not based on Certification
